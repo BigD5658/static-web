@@ -444,11 +444,11 @@
 .fresh ul li:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.20);
 }
-.jjzyx{
+.common-style{
     height: 698px;/*738-40*/
     padding-top: 40px;
 }
-.jjzyx .hd h2{
+.common-style .hd h2{
     float: left;
 }
 .content-part .hd em{
@@ -485,30 +485,48 @@
 .content-part .hd nav ul li.current a{
     color: #20BD9A;
 }
-.jjzyx .bd>ul>li{
+.common-style .bd>ul>li{
     float: left;
     margin-right: 32px;
     margin-bottom: 32px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.08);
+    background-color: #F7F7F7;
 }
-.jjzyx .bd>ul>li:hover{
+.common-style .bd>ul>li:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-.jjzyx .bd a{
+.common-style .bd a{
     text-decoration: none;
 }
-.jjzyx .bd{
+/*公共類的特效,屬標觸碰圖片,有放大效果*/
+.content-part img{
+    transition: transform .5s ease 0s;
+}
+.content-part img:hover{
+    transform: scale(1.1);
+}
+.content-part li{
+    overflow: hidden;
+}
+.content-part li .picbox{
+    width: 300px;
+    overflow: hidden;
+}
+.content-part .grid{
+    overflow: hidden;
+}
+.common-style .bd{
     margin-top: 32px;
 }
-.jjzyx .bd>ul>li:nth-child(3), .jjzyx .bd>ul>li:nth-child(7){
+.common-style .bd>ul>li:nth-child(3), .common-style .bd>ul>li:nth-child(7){
     margin-right: 0;
 }
-.jjzyx .bd>ul>li.big-grid{
+.common-style .bd>ul>li.big-grid{
     width: 560px;
     height: 270px;
     position: relative;
 }
-.jjzyx .bd>ul>li.big-grid .info{
+.common-style .bd>ul>li.big-grid .info{
     position: absolute;
     width: 560px;
     height: 103px;
@@ -520,7 +538,7 @@
     box-sizing: border-box;
     line-height: 26px;
 }
-.jjzyx .bd>ul>li .tag{
+.common-style .bd>ul>li .tag{
     position: absolute;
     width: 74px;
     height:40px;
@@ -530,19 +548,21 @@
     left: 0;
     text-align: center;
     line-height: 40px;
+    /*圖片一處碰,就會有transform變形,此時會蓋住tag,所以給tag加上權重防止被蓋住*/
+    z-index: 9999;
 }
-.jjzyx .bd>ul>li.pro-grid{
+.common-style .bd>ul>li.pro-grid{
     width: 264px;
     height: 270px;
 }
-.jjzyx .bd>ul>li.pro-grid .picbox{
+.common-style .bd>ul>li.pro-grid .picbox{
     position: relative;
     height: 184px;
 }
-.jjzyx .bd>ul>li.pro-grid .picbox .tag{
+.common-style .bd>ul>li.pro-grid .picbox .tag{
     bottom: 0px;
 }
-.jjzyx .bd>ul>li.pro-grid .wordbox{
+.common-style .bd>ul>li.pro-grid .wordbox{
     padding: 14px;
     font-size: 14px;
     color: #1c1f21;
@@ -552,9 +572,14 @@
     width: 264px;
     height: 270px;
     background-image: linear-gradient(180deg, #34E3BC 0%, #15AF7A 98%);
-    padding-top: 46px;
     box-sizing: border-box;
     position: relative;
+}
+.content-part .more-grid a{
+    display: block;
+    padding-top: 46px;
+    height: 270px;
+    box-sizing: border-box;
 }
 .content-part .more-grid p{
     text-align: center;
@@ -570,11 +595,26 @@
     height: 60px;
     left: 50%;
     top: 108px;
-    margin-left: -24px;
+    margin-left: -24px;   
+}
+/*屬標觸碰mare-grid時,icofont會作動*/
+.content-part .more-grid:hover .icofont{
+    animation: ud .4s ease 0s infinite alternate;
+}
+@keyframes ud{
+    from{
+        transform:translateY(-10px);
+    }
+    to{
+        transform:translateY(10px);
+    }
 }
 .content-part .more-grid ul{
     margin-top: 112px;
     padding-left: 42px;
+}
+.jjzyx .bd .more-grid p{
+    margin-top: 20px;
 }
 .content-part .more-grid ul li{
     color: white;
@@ -612,6 +652,7 @@
     margin-right: 0;
 }
 .ddwl .bd .bigpicbox{
+    overflow: hidden;
     width: 364px;
     height: 270px;
     position: relative;
@@ -674,4 +715,137 @@ padding-left: 24px;
 }
 .ddwl .bd .grid:hover, .ddwl .bd .bigpicbox:hover ,.ddwl .bd .more-grid:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.20);
+}
+.tsddty{
+    height: 456px;
+}
+.tsddty .center-wrap{
+    padding: 40px;
+}
+.tsddty .center-wrap h2{
+    text-align: center;
+}
+.tsddty .bd{
+    padding-top: 32px;
+}
+.tsddty .bd ul li{
+    float: left;
+    width: 264px;
+    height: 290px;
+    margin-right: 32px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.10);
+}
+.tsddty .bd ul li:last-child{
+    margin-right: 0;
+}
+.tsddty a{
+    text-decoration: none;
+}
+.tsddty .bd ul li .wordbox{
+    padding: 16px 9px 0;
+}
+.tsddty .bd ul li .wordbox .proname{
+    font-weight: bold;
+    font-size: 17px;
+    color: #000;
+    height: 48px;
+}
+.tsddty .bd ul li .wordbox .score{
+    font-size: 13px;
+    color: #fa6400;
+}
+.tsddty .bd ul li .wordbox .comment{
+    font-size: 13px;
+    color: #000;
+}
+.tsddty .bd ul li:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.25);
+}
+.zsjsdlx{
+    height: 738px;
+    background-color: #F7F7F7;
+}
+.zsjsdlx .hd em{
+    float: left;
+    width: 330px;
+}
+.zsjsdlx .hd nav{
+    float: right;
+    width: 130px;
+}
+.zsjsdlx .bd .more-grid{
+    background-image: linear-gradient(180deg, #BD5EE8 0%, #832ABB 98%);
+}
+.zsjsdlx .bd .more-grid ul{
+    padding-left: 50px;
+}
+.zsjsdlx .more-grid p{
+    margin-top: 20px;
+}
+.gtbzzy{
+    height: 738px;
+    background-color: #F7F7F7;
+}
+.gtbzzy .hd em{
+    float: left;
+    width: 330px;
+}
+.gtbzzy .hd nav{
+    float: right;
+    width: 200px;
+}
+.gtbzzy .bd .more-grid{
+    background-image: linear-gradient(180deg, #41D8E9 0%, #3685EA 98%);
+}
+.gtbzzy .bd .more-grid ul{
+    padding-left: 68px;
+}
+.gtbzzy .more-grid p{
+    margin-top: 22px;
+}
+.big-grid.havehover .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    /* 總透明度 */
+    opacity: 0;
+    /* 過度 */
+    transition: opacity .4s ease 0s;
+}
+.big-grid.havehover:hover .mask {
+    opacity: 1;
+}
+.big-grid.havehover .circle {
+    position: absolute;
+    top: -106px;
+    left: 50%;
+    margin-left: -53px;
+    width: 106px;
+    height: 106px;
+    border: 1px solid white;
+    border-radius: 50%;
+    color: white;
+    box-sizing: border-box;
+    padding-top: 25px;
+    font-size: 18px;
+    transition: top .5s ease 0s;
+}
+.big-grid.havehover .circle p{
+    text-align: center;
+}
+.big-grid.havehover:hover .circle{
+    top: 62px;
+}
+.big-grid.havehover .word{
+    position: absolute;
+    bottom: -100px;
+    left: 10px;
+    color: white;
+    transition: bottom .5s ease 0s;
+}
+.big-grid.havehover:hover .word {
+    bottom: 30px;
 }
