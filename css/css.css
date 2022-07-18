@@ -1,0 +1,614 @@
+.site-head{
+    min-width: 1152px;
+    height: 150px;
+}
+.site-head .topbar{
+    height: 32px;
+    background-color: #2a2a2a;
+    color: white;
+    line-height: 32px;
+}
+.site-head .topbar a{
+    /*去除a標籤底線*/
+    text-decoration: none;
+    color: white;
+}
+.site-head .topbar .shortcut-links{
+    float: left;
+}
+/*  >  選擇器 限定子元素 不會影響到後輩*/
+.site-head .topbar .shortcut-links > ul > li {
+    float: left;
+    /*去除li小圓點*/
+    list-style-type:none;
+    margin-right: 18px;
+    font-size: 14px;
+}
+.site-head .topbar .shortcut-links > ul > li.have-meun{
+    padding-right: 12px;
+    /*相對定位*/
+    position: relative;
+} 
+    
+.site-head .topbar .shortcut-links > ul > li.have-meun .arrow{
+    /*絕對定位 子絕父相*/
+    position: absolute;
+    right:0;
+    top: 50%;
+    margin-top: -6px;
+    width: 12px;
+    height: 12px;
+    transition:  transform .5s ease 0s;
+}
+.site-head .topbar .shortcut-links > ul > li.have-meun:hover .arrow{
+    transform: rotate(180deg);
+}
+    /*用i框框去遮蓋住b框框來達到顯示  ⌄  的效果*/
+.site-head .topbar .shortcut-links > ul > li.have-meun .arrow b{
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    transform: rotate(45deg);
+}
+.site-head .topbar .shortcut-links > ul > li.have-meun .arrow i{
+    position: absolute;
+    left: 3px;
+    top: 0.5px;
+    width: 6px;
+    height: 6px;
+    background-color: #2a2a2a;
+    transform: rotate(45deg);
+}
+.site-head .topbar .shortcut-links > ul > li.have-meun .menu{
+    position: absolute;
+    /*這邊的top數值如果超出shortcut-links的height會讓顯示出來的menu消失請注意
+    或是可以建立一個子標籤用padding-top讓他假裝懸空*/
+    top: 30px;
+    left: 0;
+    /*讓他可以覆蓋其他元素*/
+    z-index: 9999;
+    display: none;
+    padding-top: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);
+}
+.site-head .topbar .shortcut-links > ul > li.have-meun .sqmenu{
+    width: 110px;
+}
+.site-head .topbar .shortcut-links > ul > li.have-meun .scmenu{
+    width: 80px;
+}
+.site-head .topbar .shortcut-links > ul > li.have-meun .jdmsmenu{
+    width: 80px;
+}
+/*當使用者點選have-menu時顯示menu*/
+.site-head .topbar .shortcut-links > ul > li.have-meun:hover .menu{
+    display: block;
+}
+.site-head .topbar .shortcut-links > ul > li.have-meun .menu .menu-list li{
+    height: 20px;
+    line-height: 20px;
+}
+.site-head .topbar .shortcut-links > ul > li.have-meun .menu .menu-list a{
+    color: #1c1f21;
+    font-size: 12px;
+    line-height: 20px;
+}
+.site-head .topbar .shortcut-links > ul > li.have-meun .menu .menu-list a:hover{
+    color: orange;
+}
+.site-head .topbar .center-wrap .topbar-right {
+    float: right;
+    width: 225px;
+}
+.site-head .topbar .center-wrap .topbar-right a, .site-head .topbar .center-wrap .topbar-right span{
+    margin-right: 14px;
+    font-size: 14px;
+}
+.site-head .topbar .center-wrap .topbar-right a:last-child{
+    margin-right: 0;
+}
+.site-head .main-nav {
+    height: 40px;
+    background-color: #20BD9A;
+}
+.site-head .main-nav ul li {
+    list-style-type:none;
+    float: left;
+    margin-right: 18px;
+}
+.site-head .main-nav ul li.have-menu{
+    padding-right: 16px ;
+    position: relative;
+}
+.site-head .main-nav ul li a{
+    text-decoration: none;
+    color: white;
+    line-height: 40px;
+}
+/*利用偽元素來創建三角形*/
+.site-head .main-nav ul li.have-menu::before{ 
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 24px;
+    margin-top: -8px;
+    width: 0px;
+    height: 0px;
+    border: 5px solid transparent;
+    /*如果沒有去掉下邊框 會變成正方形的 等等加上transition會變很怪*/
+    border-bottom: none;
+    border-top-color:white ;
+    transition: transform .5s ease 0s;
+
+}
+.site-head .main-nav ul li.have-menu:hover::before{
+    transform: rotate(180deg);
+}
+.site-head .main-nav ul li .menu{
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    padding-top: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);
+}
+.site-head .main-nav ul li:hover .menu{
+    display: block;
+}
+.site-head .main-nav ul li .jjzyxmenu{
+    width: 170px;
+}
+.site-head .main-nav ul li .gtymenu{
+    width: 120px;
+}
+.site-head .main-nav ul li .ddwlmenu{
+    width: 200px;
+}
+.site-head .main-nav ul li .sdlymenu{
+    width: 140px;
+}
+.site-head .main-nav ul li .menu dl dt{
+    font-size: 16px; 
+}
+.site-head .main-nav ul li .menu dl dd a{
+    color: #1c1f21;
+}
+.site-head .main-nav ul li .menu dl dd a:hover{
+    color: orange;
+}
+.site-head .header-con {
+    height: 36px;
+    padding: 20px 0;
+}
+.site-head .header-con h1 {
+    float: left;
+    font-size: 24px;
+    color: #20BD9A;
+    line-height: 36px;
+    font-weight: bold;
+}
+.site-head .header-con .searchbox{
+    float: left;
+    margin-left: 20px;
+    width: 405px;
+    padding-top: 2px;
+}
+.site-head .header-con .searchbox input{
+    width: 361px;
+    height: 28px;
+    border: 1px solid #20BD9A;
+    /*分別設置四個角的角度 左上,右上,右下,左下*/
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    /*取消外線,外線是文本框特有的屬性,有寫outline你的searchbox就不會被反黑*/
+    outline: none;
+    padding-left: 10px;
+    float: left;
+}
+.site-head .header-con .searchbox .btn{
+    /*可以轉成行內區塊或是用浮動去操作,轉成行內區塊display: inline-block
+    要注意searchbox的width夠不夠放,不然就會掉下去下一排*/
+    float: left;
+    width: 32px;
+    height: 30px;
+    background-color: #20BD9A;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font: 18px;
+    border-radius: 0 4px 4px 0;
+}
+.banner{
+    position: relative;
+}
+.banner img{
+    width: 100%;
+    /*使用min-width,代表限制最小像素*/
+    min-width: 1152px;
+    /*當圖片和盒子的底部有一點點隙縫,
+    可以使用vertical-align來達到跟父元素對齊*/
+    vertical-align: middle;
+}
+.banner .center-wrap{
+    /*只要需要覆蓋一定要注意絕對定位 子絕父相*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1152px;
+    left: 50%;
+    margin-left: -576px;
+    height: 100px;
+    /*這裡的height:100%不能省略,如果省略了他的height就是0
+    那個將子盒子設置成16.66%就沒意義了*/
+    height: 100%;
+}
+.banner .center-wrap .banner-nav {
+    /*這裡的height:100%不能省略,如果省略了他的height就是0
+    那個將子盒子設置成16.66%就沒意義了*/
+    height: 100%;
+}
+.banner .center-wrap .banner-nav>ul {
+    /*這裡的height:100%不能省略,如果省略了他的height就是0
+    那個將子盒子設置成16.66%就沒意義了*/
+    height: 100%;
+}
+.banner .center-wrap .banner-nav>ul>li {
+    height: 16.66%;
+    width: 296px;
+    background-color: rgba(0,0,0,.53);
+    border-bottom: 1px solid #9e9e9e;
+    /*box-sizing:border-box屬性是讓height屬性是盒子的總高度,當遇到這種情況:在盒子的高度是用百分比寫的,但是盒子有邊框的時候
+    此時要讓盒子的邊框涵蓋在height裡面就要使用box-sizing
+    簡單來說就是讓被宣告的子元素無法超出父元素的width&height*/
+    box-sizing: border-box;
+}
+.banner .center-wrap .leftbtn{
+    position: absolute;
+    width: 28px;
+    height: 44px;
+    background: url(../images/icons.png) no-repeat -21px -94px;
+    top: 50%;
+    left: -38px;
+    margin-top: -22px;
+}
+.banner .center-wrap .rightbtn{
+    position: absolute;
+    width: 28px;
+    height: 44px;
+    background: url(../images/icons.png) no-repeat -21px -29px;
+    top: 50%;
+    right: -38px;
+    margin-top: -22px;
+}
+.banner .center-wrap .leftbtn:hover, .banner .center-wrap .rightbtn:hover{
+    /*透明度*/
+    opacity: 0.8;
+}
+.banner .center-wrap .banner-nav>ul>li{
+    position: relative;
+}
+.banner .center-wrap .banner-nav>ul>li dl{
+    position: absolute;
+    height: 48px;
+    top: 50%;
+    margin-top: -24px;
+    left: 42px;
+    color: white;
+}
+.banner .center-wrap .banner-nav>ul>li dl dt{
+    font-size: 18px;
+    line-height: 26px;
+    height: 26px;
+}
+.banner .center-wrap .banner-nav>ul>li dl dd{
+    font-size: 16px;
+    line-height: 22px;
+    height: 22px;
+}
+.banner .center-wrap .banner-nav>ul>li::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    background-image: url(../images/icons.png);
+}
+.banner .center-wrap .banner-nav>ul>li.hot::before{
+    width: 22px;
+    height: 18px;
+    background-position: -29px -399px ;
+    margin-top: -9px;
+}
+.banner .center-wrap .banner-nav>ul>li.hk::before{
+    width: 18px;
+    height: 21px;
+    background-position: -28px -217px ;
+    margin-top: -10.5px;
+}
+.banner .center-wrap .banner-nav>ul>li.jp::before{
+    width: 24px;
+    height: 19px;
+    background-position: -25px -171px ;
+    margin-top: -9.5px;
+}
+.banner .center-wrap .banner-nav>ul>li.as::before{
+    width: 18px;
+    height: 19px;
+    background-position: -28px -262px ;
+    margin-top: -9.5px;
+    left: 12px;
+}
+.banner .center-wrap .banner-nav>ul>li.eu::before{
+    width: 20px;
+    height: 14px;
+    background-position: -29px -351px ;
+    margin-top: -9.5px;
+    left: 11px;
+}
+.banner .center-wrap .banner-nav>ul>li.au::before{
+    width: 18px;
+    height: 17px;
+    background-position: -28px -305px ;
+    margin-top: -8.5px;
+    left: 12px;
+}
+.banner .center-wrap .banner-nav .menus-box .menu{
+    position: absolute;
+    left: 296px;
+    top: 0;
+    width: 356px;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+    padding: 16px;
+    /*加上box-sizing屬性之後,height:100%就是盒子的總高度了
+    可以忽略掉padding的數值調整*/
+    box-sizing: border-box;
+}
+.banner .center-wrap .banner-nav .menus-box .menu a{
+    text-decoration: none;
+    color: white;
+}
+.banner .center-wrap .banner-nav .menus-box .menu dl{
+    margin-bottom: 16px;
+}
+.banner .center-wrap .banner-nav .menus-box .menu dl dt{
+    line-height: 30px;
+    font-size: 18px;
+}
+.banner .center-wrap .banner-nav .menus-box .menu dl dd{
+    line-height: 25px;
+    font-size: 15px;
+}
+.hot-ads{
+    margin: 32px 0;
+}
+.hot-ads ul li{
+    float: left;
+    width: 264px;
+    height: 110px;
+    margin-right: 32px;
+}
+.hot-ads ul li:last-child{
+    margin-right: 0;
+}
+.fresh{
+    padding-top: 40px;
+    height: 698px;
+    background-color: #F7F7F7;
+}
+.fresh .hd{
+    margin-bottom: 32px;
+}
+.content-part h2{
+    font-size: 36px;
+    font-weight: bold;
+    color: #1c1f21;
+}
+.fresh .hd h2 {
+    float: left;
+
+}
+.fresh .hd em{
+    float: left;
+    position: relative;
+    top: 20px;
+    left: 10px;
+    color: #1c1f21;
+}
+.fresh ul li{
+    float: left;
+    width: 264px;
+    height: 270px;
+    margin-right: 32px;
+    background:white ;
+    margin-bottom: 32px;
+}
+.fresh ul li:nth-child(4n) {
+    margin-right: 0;
+}
+.fresh .center-wrap ul li a{
+    text-decoration: none;
+}
+.fresh ul li .wordbox{
+    padding: 15px;
+    color: #1c1f21;
+    font-size: 14px;
+}
+.fresh ul li:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.20);
+}
+.jjzyx{
+    height: 698px;/*738-40*/
+    padding-top: 40px;
+}
+.jjzyx .hd h2{
+    float: left;
+}
+.content-part .hd em{
+    float: left;
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+.content-part .hd nav{
+    float: right;
+    width: 600px;
+}
+.content-part .hd nav ul{
+    padding: 16px;
+}
+.content-part .hd nav ul li{
+    float: left;
+    margin-right: 16px;
+    font-size: 14px;
+}
+.content-part .hd nav ul li:last-child{
+    margin-right: 0;
+}
+.content-part .hd a{
+    text-decoration: none;
+}
+.content-part .hd nav ul li a{
+    color: rgba(0,0,0,.85);
+}
+.content-part .hd nav ul li.current{
+    border-bottom: 4px solid #20BD9A;
+    padding-bottom: 4px;
+}
+.content-part .hd nav ul li.current a{
+    color: #20BD9A;
+}
+.jjzyx .bd>ul>li{
+    float: left;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.08);
+}
+.jjzyx .bd>ul>li:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.jjzyx .bd a{
+    text-decoration: none;
+}
+.jjzyx .bd{
+    margin-top: 32px;
+}
+.jjzyx .bd>ul>li:nth-child(3), .jjzyx .bd>ul>li:nth-child(7){
+    margin-right: 0;
+}
+.jjzyx .bd>ul>li.big-grid{
+    width: 560px;
+    height: 270px;
+    position: relative;
+}
+.jjzyx .bd>ul>li.big-grid .info{
+    position: absolute;
+    width: 560px;
+    height: 103px;
+    color: white;
+    background-color: rgba(0,0,0,.55);
+    bottom: 0;
+    left: 0;
+    padding: 30px 26px;
+    box-sizing: border-box;
+    line-height: 26px;
+}
+.jjzyx .bd>ul>li .tag{
+    position: absolute;
+    width: 74px;
+    height:40px;
+    color: white;
+    background-color: rgba(0,0,0,.55);
+    bottom: 103px;
+    left: 0;
+    text-align: center;
+    line-height: 40px;
+}
+.jjzyx .bd>ul>li.pro-grid{
+    width: 264px;
+    height: 270px;
+}
+.jjzyx .bd>ul>li.pro-grid .picbox{
+    position: relative;
+    height: 184px;
+}
+.jjzyx .bd>ul>li.pro-grid .picbox .tag{
+    bottom: 0px;
+}
+.jjzyx .bd>ul>li.pro-grid .wordbox{
+    padding: 14px;
+    font-size: 14px;
+    color: #1c1f21;
+    line-height: 26px;
+}
+.content-part .more-grid{
+    width: 264px;
+    height: 270px;
+    background-image: linear-gradient(180deg, #34E3BC 0%, #15AF7A 98%);
+    padding-top: 46px;
+    box-sizing: border-box;
+    position: relative;
+}
+.content-part .more-grid p{
+    text-align: center;
+    color: white;
+    line-height: 24px;
+    font-size: 15px;
+}
+.content-part .more-grid .icofont{
+    position: absolute;
+    font-size: 48px;
+    color: white;
+    width: 48px;
+    height: 48px;
+    left: 50%;
+    top: 108px;
+    margin-left: -24px;
+}
+.content-part .more-grid ul{
+    margin-top: 112px;
+    padding-left: 42px;
+}
+.content-part .more-grid ul li{
+    color: white;
+    float: left;
+    border-right: 1px solid white;
+    padding: 0 6px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 15px;
+}
+.content-part .more-grid ul li:nth-last-child{
+    border-right: none;
+}
+.ddwl {
+    padding-top: 40px;
+    height: 546px;
+    background-color: #F7F7F7;
+}
+.ddwl h2{
+    float: left;
+}
+.ddwl .hd nav{
+    width: 349px;
+}
+.ddwl .bd{
+    margin-top: 32px;
+}
+.ddwl .bd .col {
+    float: left;
+    width: 364px;
+    height: 480px;
+    background-color: orange;
+    margin-right: 30px;
+}
+.ddwl .bd .col:last-child{
+    margin-right: 0;
+}
