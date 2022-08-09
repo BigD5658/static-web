@@ -228,12 +228,22 @@
 .banner{
     position: relative;
 }
-.banner img{
-    width: 100%;
-    /*使用min-width,代表限制最小像素*/
-    min-width: 1152px;
-    /*當圖片和盒子的底部有一點點隙縫,
-    可以使用vertical-align來達到跟父元素對齊*/
+
+.banner .carsousel_list{
+    width: 600%;
+    /*清除浮動*/
+    overflow: hidden;
+    /*translateX中的百分數表示相對於它本身的多少倍,-16.66%換到第二張,-33.33換到第三張*/
+    /*transform:translateX(-16.66%);*/
+    transition: transform .5s ease 0s;
+}
+.banner .carsousel_list li{
+    float: left;
+    width: 16.666%;
+}
+.banner .carsousel_list li img{
+    width:100%;
+    /*處理白邊*/
     vertical-align: middle;
 }
 .banner .center-wrap{

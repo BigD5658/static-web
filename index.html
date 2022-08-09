@@ -195,10 +195,27 @@
     </header>
     <!--banner-->
     <section class="banner">
-        <img src="images/banner1.jpg" alt="">
+        <ul id="carsousel_list" class="carsousel_list">
+            <li>
+                <img src="images/banner1.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/banner2.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/banner3.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/banner4.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/banner5.jpg" alt="">
+            </li>
+        </ul>
         <div class="center-wrap">
-            <a href=""class="leftbtn"></a>
-            <a href=""class="rightbtn"></a>
+             <!--標籤的href放入javascript:是表示在觸發默認動作時，執行一段JavaScript代碼，而javascript:; 表示什麼都不執行，這樣點擊時就沒有任何反應-->
+            <a href="javascript:;" id="left_btn" class="leftbtn"></a>
+            <a href="javascript:;" id="right_btn" class="rightbtn"></a>
             <nav class="banner-nav">
                 <ul>
                     <li class="hot">
@@ -594,6 +611,8 @@
             </nav>
         </div>
     </section>
+   
+    <script src="js/carsousel.js"></script>
     <!--熱門廣告-->
     <section class="hot-ads clearfix">
         <div class="center-wrap">
