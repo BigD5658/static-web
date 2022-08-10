@@ -1004,6 +1004,7 @@ footer .copyrights a {
     color: white;
 }
 .backtotop {
+    text-decoration: none;
     position: fixed;
     bottom: 80px;
     right: 80px;
@@ -1015,6 +1016,6 @@ footer .copyrights a {
     padding-top: 12px;
     box-sizing: border-box;
     color: #000;
-    /* 隐藏元素 */
+    /*隱藏*/
     display: none;
 }

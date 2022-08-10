@@ -6,6 +6,7 @@
   var right_btn = document.getElementById("right_btn");
   var circles_ol = document.getElementById("circles_ol");
   var circles_lis = circles_ol.getElementsByTagName("li");
+  var banner = document.getElementById("banner");
 
   //克隆第一張li 這時還是孤兒節點
   var clone_li = carsousel_list.firstElementChild.cloneNode(true);
@@ -18,7 +19,10 @@
   var lock = true;
 
   //右按鍵是件監聽
-  right_btn.onclick = function () {
+  right_btn.onclick = right_btn_handler;
+
+  //右按鈕的事件處理函數
+  function right_btn_handler() {
     //判斷節流.如果是false就甚麼都不做
     if (!lock) return;
     //關閉防止被干擾
@@ -45,7 +49,7 @@
     setTimeout(function () {
       lock = true;
     }, 500);
-  };
+  }
 
   //左按鈕事件監聽
   left_btn.onclick = function () {
@@ -105,5 +109,19 @@
       //設置小圓點
       setCircles();
     }
+  };
+
+  //定時器,自動輪播
+  var timer = setInterval(right_btn_handler, 2000);
+  //當鼠標進入自動停止輪播
+  banner.onmouseenter = function () {
+    clearInterval(timer);
+  };
+  //鼠標離開,自動撥放
+  banner.onmouseleave = function () {
+    //先關掉防止用戶頻繁的點擊
+    clearInterval(timer);
+    //這邊的var宣告不能加,會變成局部變量,就clear不掉了
+    timer = setInterval(right_btn_handler, 2000);
   };
 })();
