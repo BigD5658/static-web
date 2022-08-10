@@ -227,6 +227,7 @@
 }
 .banner{
     position: relative;
+    overflow: hidden;
 }
 
 .banner .carsousel_list{
@@ -369,6 +370,7 @@
     left: 12px;
 }
 .banner .center-wrap .banner-nav .menus-box .menu{
+    display: none;
     position: absolute;
     left: 296px;
     top: 0;
@@ -380,6 +382,9 @@
     /*加上box-sizing屬性之後,height:100%就是盒子的總高度了
     可以忽略掉padding的數值調整*/
     box-sizing: border-box;
+}
+.banner .center-wrap .banner-nav .menus-box .menu .current{
+    display: block;
 }
 .banner .center-wrap .banner-nav .menus-box .menu a{
     text-decoration: none;
@@ -395,6 +400,33 @@
 .banner .center-wrap .banner-nav .menus-box .menu dl dd{
     line-height: 25px;
     font-size: 15px;
+}
+.banner .circles{
+    width: 160px;
+    height: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -75px;
+    z-index: 9999;
+}
+.banner .circles li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background-color: #16816a;
+    margin-right: 10px;
+    border-radius: 10px;
+    transition: all 0.5s ease 0s;
+    /*鼠標型態改變*/
+    cursor: pointer;
+}
+.banner .circles li:last-child{
+    margin-right: 0;
+}
+.banner .circles li.current{
+    width: 40px;
+    background-color: #20BD9A;
 }
 .hot-ads{
     margin: 32px 0;
