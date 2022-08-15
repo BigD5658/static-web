@@ -302,6 +302,11 @@
     /*透明度*/
     opacity: 0.8;
 }
+.banner .center-wrap .banner-nav{
+    width: 652px;
+    height: 100%;
+    position: relative;
+}
 .banner .center-wrap .banner-nav>ul>li{
     position: relative;
 }
@@ -369,6 +374,9 @@
     margin-top: -8.5px;
     left: 12px;
 }
+.banner .center-wrap .banner-nav>ul>li.current{
+    background-color: rgba(0,0,0,.63);
+}
 .banner .center-wrap .banner-nav .menus-box .menu{
     display: none;
     position: absolute;
@@ -382,8 +390,10 @@
     /*加上box-sizing屬性之後,height:100%就是盒子的總高度了
     可以忽略掉padding的數值調整*/
     box-sizing: border-box;
+    z-index: 99999;
+    
 }
-.banner .center-wrap .banner-nav .menus-box .menu .current{
+.banner .center-wrap .banner-nav .menus-box .menu.current{
     display: block;
 }
 .banner .center-wrap .banner-nav .menus-box .menu a{
