@@ -1,0 +1,82 @@
+        <div class="topbar">
+            <div class="center-wrap">
+                <nav class="shortcut-links">
+                    <ul>
+                        <li>
+                            <a href="">目的地</a>
+                        </li>
+                        <li>
+                            <a href="">錦囊</a>
+                        </li>
+                        <li class="have-meun">
+                            <a href="">社群</a>
+                            <em class="arrow">
+                                <b></b>
+                                <i></i>
+                            </em>
+                            <div class="menu sqmenu">
+                                <ul class="menu-list">
+                                    <li><a href="">旅遊論壇</a></li>
+                                    <li><a href="">旅遊專欄</a></li>
+                                    <li><a href="">旅遊問答</a></li>
+                                    <li><a href="">旅遊生活分享平台</a></li>
+                                    <li><a href="">JNE旅行生活美學</a></li>
+                                    <li><a href="">Biu伴（原結伴同遊)</a></li>
+                                    <li><a href="">負責任的旅行</a></li>
+                                    <li><a href="">特別企劃</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">行程助手</a>
+                        </li>
+                        <li class="have-meun">
+                            <a href="">商城</a>
+                            <em class="arrow">
+                                <b></b>
+                                <i></i>
+                            </em>
+                            <div class="menu scmenu">
+                                <ul class="menu-list">
+                                    <li><a href="#">機酒自由行</a></li>
+                                    <li><a href="#">當地玩樂</a></li>
+                                    <li><a href="#">簽證</a></li>
+                                    <li><a href="#">保險</a></li>
+                                    <li><a href="#">租車自駕</a></li>
+                                    <li><a href="#">遊輪</a></li>
+                                    <li><a href="#">河輪</a></li>
+                                    <li><a href="#">私人定製</a></li>
+                                    <li><a href="#">火車旅遊</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="have-meun">
+                            <a href="">酒店&名宿</a>
+                            <em class="arrow">
+                                <b></b>
+                                <i></i>
+                            </em>
+                            <div class="menu jdmsmenu">
+                                <ul class="menu-list">
+                                    <li><a href="#">酒店</a></li>
+                                    <li><a href="#">名宿</a></li>
+                                    <li><a href="#">私人旅館</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">特價酒店</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="topbar-right">
+                    <a href="" class="icofont">&#xed12;</a>
+                    <span>|</span>
+                    <a href="" class="icofont">&#xed7a;</a>
+                    <a href="" class="icofont">&#xed46;</a>
+                    <a href="" class="icofont">&#xed36;</a>
+                    <a href="">登入</a>
+                    <a href="">註冊</a>
+                </div>
+            </div>
+        </div>
